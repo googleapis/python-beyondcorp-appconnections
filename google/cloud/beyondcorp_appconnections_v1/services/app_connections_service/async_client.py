@@ -16,7 +16,17 @@
 from collections import OrderedDict
 import functools
 import re
-from typing import Dict, Mapping, Optional, Sequence, Tuple, Type, Union
+from typing import (
+    Dict,
+    Mapping,
+    MutableMapping,
+    MutableSequence,
+    Optional,
+    Sequence,
+    Tuple,
+    Type,
+    Union,
+)
 import pkg_resources
 
 from google.api_core.client_options import ClientOptions
@@ -192,9 +202,9 @@ class AppConnectionsServiceAsyncClient:
     def __init__(
         self,
         *,
-        credentials: ga_credentials.Credentials = None,
+        credentials: Optional[ga_credentials.Credentials] = None,
         transport: Union[str, AppConnectionsServiceTransport] = "grpc_asyncio",
-        client_options: ClientOptions = None,
+        client_options: Optional[ClientOptions] = None,
         client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
     ) -> None:
         """Instantiates the app connections service client.
@@ -238,11 +248,13 @@ class AppConnectionsServiceAsyncClient:
 
     async def list_app_connections(
         self,
-        request: Union[app_connections_service.ListAppConnectionsRequest, dict] = None,
+        request: Optional[
+            Union[app_connections_service.ListAppConnectionsRequest, dict]
+        ] = None,
         *,
-        parent: str = None,
+        parent: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> pagers.ListAppConnectionsAsyncPager:
         r"""Lists AppConnections in a given project and location.
@@ -275,7 +287,7 @@ class AppConnectionsServiceAsyncClient:
                     print(response)
 
         Args:
-            request (Union[google.cloud.beyondcorp_appconnections_v1.types.ListAppConnectionsRequest, dict]):
+            request (Optional[Union[google.cloud.beyondcorp_appconnections_v1.types.ListAppConnectionsRequest, dict]]):
                 The request object. Request message for
                 BeyondCorp.ListAppConnections.
             parent (:class:`str`):
@@ -354,11 +366,13 @@ class AppConnectionsServiceAsyncClient:
 
     async def get_app_connection(
         self,
-        request: Union[app_connections_service.GetAppConnectionRequest, dict] = None,
+        request: Optional[
+            Union[app_connections_service.GetAppConnectionRequest, dict]
+        ] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> app_connections_service.AppConnection:
         r"""Gets details of a single AppConnection.
@@ -390,7 +404,7 @@ class AppConnectionsServiceAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.beyondcorp_appconnections_v1.types.GetAppConnectionRequest, dict]):
+            request (Optional[Union[google.cloud.beyondcorp_appconnections_v1.types.GetAppConnectionRequest, dict]]):
                 The request object. Request message for
                 BeyondCorp.GetAppConnection.
             name (:class:`str`):
@@ -462,13 +476,15 @@ class AppConnectionsServiceAsyncClient:
 
     async def create_app_connection(
         self,
-        request: Union[app_connections_service.CreateAppConnectionRequest, dict] = None,
+        request: Optional[
+            Union[app_connections_service.CreateAppConnectionRequest, dict]
+        ] = None,
         *,
-        parent: str = None,
-        app_connection: app_connections_service.AppConnection = None,
-        app_connection_id: str = None,
+        parent: Optional[str] = None,
+        app_connection: Optional[app_connections_service.AppConnection] = None,
+        app_connection_id: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Creates a new AppConnection in a given project and
@@ -512,7 +528,7 @@ class AppConnectionsServiceAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.beyondcorp_appconnections_v1.types.CreateAppConnectionRequest, dict]):
+            request (Optional[Union[google.cloud.beyondcorp_appconnections_v1.types.CreateAppConnectionRequest, dict]]):
                 The request object. Request message for
                 BeyondCorp.CreateAppConnection.
             parent (:class:`str`):
@@ -615,12 +631,14 @@ class AppConnectionsServiceAsyncClient:
 
     async def update_app_connection(
         self,
-        request: Union[app_connections_service.UpdateAppConnectionRequest, dict] = None,
+        request: Optional[
+            Union[app_connections_service.UpdateAppConnectionRequest, dict]
+        ] = None,
         *,
-        app_connection: app_connections_service.AppConnection = None,
-        update_mask: field_mask_pb2.FieldMask = None,
+        app_connection: Optional[app_connections_service.AppConnection] = None,
+        update_mask: Optional[field_mask_pb2.FieldMask] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Updates the parameters of a single AppConnection.
@@ -662,7 +680,7 @@ class AppConnectionsServiceAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.beyondcorp_appconnections_v1.types.UpdateAppConnectionRequest, dict]):
+            request (Optional[Union[google.cloud.beyondcorp_appconnections_v1.types.UpdateAppConnectionRequest, dict]]):
                 The request object. Request message for
                 BeyondCorp.UpdateAppConnection.
             app_connection (:class:`google.cloud.beyondcorp_appconnections_v1.types.AppConnection`):
@@ -761,11 +779,13 @@ class AppConnectionsServiceAsyncClient:
 
     async def delete_app_connection(
         self,
-        request: Union[app_connections_service.DeleteAppConnectionRequest, dict] = None,
+        request: Optional[
+            Union[app_connections_service.DeleteAppConnectionRequest, dict]
+        ] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Deletes a single AppConnection.
@@ -801,7 +821,7 @@ class AppConnectionsServiceAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.beyondcorp_appconnections_v1.types.DeleteAppConnectionRequest, dict]):
+            request (Optional[Union[google.cloud.beyondcorp_appconnections_v1.types.DeleteAppConnectionRequest, dict]]):
                 The request object. Request message for
                 BeyondCorp.DeleteAppConnection.
             name (:class:`str`):
@@ -885,13 +905,13 @@ class AppConnectionsServiceAsyncClient:
 
     async def resolve_app_connections(
         self,
-        request: Union[
-            app_connections_service.ResolveAppConnectionsRequest, dict
+        request: Optional[
+            Union[app_connections_service.ResolveAppConnectionsRequest, dict]
         ] = None,
         *,
-        parent: str = None,
+        parent: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> pagers.ResolveAppConnectionsAsyncPager:
         r"""Resolves AppConnections details for a given
@@ -927,7 +947,7 @@ class AppConnectionsServiceAsyncClient:
                     print(response)
 
         Args:
-            request (Union[google.cloud.beyondcorp_appconnections_v1.types.ResolveAppConnectionsRequest, dict]):
+            request (Optional[Union[google.cloud.beyondcorp_appconnections_v1.types.ResolveAppConnectionsRequest, dict]]):
                 The request object. Request message for
                 BeyondCorp.ResolveAppConnections.
             parent (:class:`str`):
@@ -1006,10 +1026,10 @@ class AppConnectionsServiceAsyncClient:
 
     async def list_operations(
         self,
-        request: operations_pb2.ListOperationsRequest = None,
+        request: Optional[operations_pb2.ListOperationsRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operations_pb2.ListOperationsResponse:
         r"""Lists operations that match the specified filter in the request.
@@ -1060,10 +1080,10 @@ class AppConnectionsServiceAsyncClient:
 
     async def get_operation(
         self,
-        request: operations_pb2.GetOperationRequest = None,
+        request: Optional[operations_pb2.GetOperationRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operations_pb2.Operation:
         r"""Gets the latest state of a long-running operation.
@@ -1114,10 +1134,10 @@ class AppConnectionsServiceAsyncClient:
 
     async def delete_operation(
         self,
-        request: operations_pb2.DeleteOperationRequest = None,
+        request: Optional[operations_pb2.DeleteOperationRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> None:
         r"""Deletes a long-running operation.
@@ -1169,10 +1189,10 @@ class AppConnectionsServiceAsyncClient:
 
     async def cancel_operation(
         self,
-        request: operations_pb2.CancelOperationRequest = None,
+        request: Optional[operations_pb2.CancelOperationRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> None:
         r"""Starts asynchronous cancellation on a long-running operation.
@@ -1223,10 +1243,10 @@ class AppConnectionsServiceAsyncClient:
 
     async def set_iam_policy(
         self,
-        request: iam_policy_pb2.SetIamPolicyRequest = None,
+        request: Optional[iam_policy_pb2.SetIamPolicyRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> policy_pb2.Policy:
         r"""Sets the IAM access control policy on the specified function.
@@ -1343,10 +1363,10 @@ class AppConnectionsServiceAsyncClient:
 
     async def get_iam_policy(
         self,
-        request: iam_policy_pb2.GetIamPolicyRequest = None,
+        request: Optional[iam_policy_pb2.GetIamPolicyRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> policy_pb2.Policy:
         r"""Gets the IAM access control policy for a function.
@@ -1464,10 +1484,10 @@ class AppConnectionsServiceAsyncClient:
 
     async def test_iam_permissions(
         self,
-        request: iam_policy_pb2.TestIamPermissionsRequest = None,
+        request: Optional[iam_policy_pb2.TestIamPermissionsRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> iam_policy_pb2.TestIamPermissionsResponse:
         r"""Tests the specified IAM permissions against the IAM access control
@@ -1523,10 +1543,10 @@ class AppConnectionsServiceAsyncClient:
 
     async def get_location(
         self,
-        request: locations_pb2.GetLocationRequest = None,
+        request: Optional[locations_pb2.GetLocationRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> locations_pb2.Location:
         r"""Gets information about a location.
@@ -1577,10 +1597,10 @@ class AppConnectionsServiceAsyncClient:
 
     async def list_locations(
         self,
-        request: locations_pb2.ListLocationsRequest = None,
+        request: Optional[locations_pb2.ListLocationsRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> locations_pb2.ListLocationsResponse:
         r"""Lists information about the supported locations for this service.
