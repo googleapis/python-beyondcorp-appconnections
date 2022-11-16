@@ -102,10 +102,14 @@ class AppConnectionsServiceClientMeta(type):
 
 
 class AppConnectionsServiceClient(metaclass=AppConnectionsServiceClientMeta):
-    """API Overview: The ``beyondcorp.googleapis.com`` service implements the Google
+    """API Overview:
+
+    The ``beyondcorp.googleapis.com`` service implements the Google
     Cloud BeyondCorp API.
 
-    Data Model: The AppConnectionsService exposes the following resources:
+    Data Model:
+
+    The AppConnectionsService exposes the following resources:
 
     -  AppConnections, named as follows:
        ``projects/{project_id}/locations/{location_id}/appConnections/{app_connection_id}``.
