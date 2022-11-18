@@ -18,19 +18,22 @@ from google.cloud.beyondcorp_appconnections import gapic_version as package_vers
 __version__ = package_version.__version__
 
 
-from .services.app_connections_service import AppConnectionsServiceClient
-from .services.app_connections_service import AppConnectionsServiceAsyncClient
-
-from .types.app_connections_service import AppConnection
-from .types.app_connections_service import AppConnectionOperationMetadata
-from .types.app_connections_service import CreateAppConnectionRequest
-from .types.app_connections_service import DeleteAppConnectionRequest
-from .types.app_connections_service import GetAppConnectionRequest
-from .types.app_connections_service import ListAppConnectionsRequest
-from .types.app_connections_service import ListAppConnectionsResponse
-from .types.app_connections_service import ResolveAppConnectionsRequest
-from .types.app_connections_service import ResolveAppConnectionsResponse
-from .types.app_connections_service import UpdateAppConnectionRequest
+from .services.app_connections_service import (
+    AppConnectionsServiceAsyncClient,
+    AppConnectionsServiceClient,
+)
+from .types.app_connections_service import (
+    AppConnection,
+    AppConnectionOperationMetadata,
+    CreateAppConnectionRequest,
+    DeleteAppConnectionRequest,
+    GetAppConnectionRequest,
+    ListAppConnectionsRequest,
+    ListAppConnectionsResponse,
+    ResolveAppConnectionsRequest,
+    ResolveAppConnectionsResponse,
+    UpdateAppConnectionRequest,
+)
 
 __all__ = (
     "AppConnectionsServiceAsyncClient",
